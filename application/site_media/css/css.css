@@ -1,0 +1,184 @@
+/**{
+	border:1px solid orange;
+}*/
+article, footer, header, section{
+	display:block;
+
+}
+
+body{
+	background:url('../img/45degreee_fabric.png');
+	font-size:16px;
+	text-align:center;
+	margin:0;	
+}
+
+footer, header, section{
+	margin:1em auto;
+	width:90%;
+}
+
+header{
+	margin-top:3em;
+}
+
+header h1{
+	color:#809686;
+	font-size:5em;
+	font-family: 'Cookie', cursive;
+	letter-spacing:7px;
+}
+
+header h1:hover{
+	cursor:pointer;
+	color:#81A88C;
+}
+table{
+	margin:0 auto;
+}
+td, th{
+padding:10px 20px;
+background-color:#fff;
+background-image:-moz-linear-gradient(0% 40% 90deg, #ccc, #fff);
+background-image:-webkit-gradient(linear, 0% 0%, 0% 40%, from(#fff), to(#ccc) );
+}
+
+#admin_button{
+	margin-bottom:2em;
+}
+
+#formulario{
+	display:none;
+}
+
+#formulario input[type="text"], #formulario input[type="password"]{	
+	border:none;	
+	border: solid 1px #fff;
+	height:40px;
+	font-size:15px;
+	padding-left:1em;
+	width:20%;
+}
+
+#formulario input[type="text"]:hover, #formulario input[type="password"]:hover, #formulario input[type="text"]:active, #formulario input[type="password"]:active{
+	border-color:#809686;	
+	cursor:pointer;
+}
+
+#formulario input[type="submit"]{
+	width:10%;
+	font-size:16px;
+}
+
+#formulario input[type="submit"]:hover{
+	background:#9F6060;
+}
+
+#main_content{
+	/*border:1px solid orange;*/
+}
+
+#productos form{
+	border:none;
+	display:inline-block;
+}
+
+#productos article{
+	cursor:pointer;
+}
+
+#productos article:hover{
+	transform:scale(1.2); -moz-transform:scale(1.2); -webkit-transform:scale(1.2);
+}
+
+.separator{	
+	border-top:2px solid black;
+	border-bottom:2px solid green;
+	height:2px;
+	margin:0 auto;
+	margin-top:1em;
+	margin-bottom:1em;
+	width:70%;
+}
+
+#sesion{
+	height:24px;
+	text-align:right;
+}
+
+
+.boton{
+	background:#8A6767;
+	border:none;
+	border-radius:7px;
+	color:#D8E3DB;
+	cursor:pointer;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	display:block;
+	font-size:1.5em;
+	height:50px;
+	margin:0 auto;	
+	position:relative;	
+	width:30%;
+}
+
+.boton:not(#login_button):hover{
+	text-decoration:underline;
+}
+
+.botoncomprar{
+	font-size:12px;
+	display:none;
+}
+
+.botoncomprar:hover{
+	background:#9D4747;
+	color:#E7F2EA;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.degradado{
+	background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(243,243,243,1)), color-stop(51%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* IE10+ */
+background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
