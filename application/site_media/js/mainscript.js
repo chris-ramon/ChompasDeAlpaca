@@ -1,4 +1,3 @@
-
 $(document).ready(	
 	function(){
 		$('header h1').bind('click', irMainPage);
@@ -6,7 +5,7 @@ $(document).ready(
 		$('#client_button').bind('click', transicion);
 		$('#productos article').bind('mouseover', mostrarAdd);
 		$('#productos article').bind('mouseout', ocultarAdd);
-		// $('#productos article button').bind('click', moverH1);
+		$('.botoncomprar').bind('click', mostrarCart);
 	}
 );
 var first = true;
@@ -70,6 +69,8 @@ function ocultarAdd(){
 	$(this).find('button').hide();
 }
 
-function moverH1(){
-	console.log('ok');
+function mostrarCart(){
+	$('#cart_empty').fadeOut('slow', function(){
+		$('#tablecart').fadeIn('slow');	
+	});	
 }

@@ -18,6 +18,11 @@ footer, header, section{
 	width:90%;
 }
 
+form{	
+	border:none;
+	display:inline-block;
+}
+
 header{
 	margin-top:3em;
 }
@@ -27,28 +32,55 @@ header h1{
 	font-size:5em;
 	font-family: 'Cookie', cursive;
 	letter-spacing:7px;
+	position: relative;
 }
 
 header h1:hover{
 	cursor:pointer;
 	color:#81A88C;
 }
-table{
+table{	
+	/*background:#E2EDE5;	*/
+	border-collapse:collapse;	
+	color:#4A3132;
 	margin:0 auto;
 }
+table, td, th{	
+	border:1px solid #809686;
+}
+
 td, th{
-padding:10px 20px;
-background-color:#fff;
-background-image:-moz-linear-gradient(0% 40% 90deg, #ccc, #fff);
-background-image:-webkit-gradient(linear, 0% 0%, 0% 40%, from(#fff), to(#ccc) );
+	padding:6px;
 }
 
 #admin_button{
 	margin-bottom:2em;
 }
 
+#cart{
+	display:inline-block;
+	margin-top:0;
+	vertical-align: top;
+	width:30%;
+}
+#cart p{
+	font-family: 'Cookie', cursive;
+	font-size:45px;
+	margin-top:0;
+	margin-bottom:0;
+}
+#checkout{
+	width:40%;
+}
+
+#tablecart{
+	/*display:none;*/
+	margin-bottom:30px;
+}
+
 #formulario{
 	display:none;
+	width:40%;
 }
 
 #formulario input[type="text"], #formulario input[type="password"]{	
@@ -57,7 +89,7 @@ background-image:-webkit-gradient(linear, 0% 0%, 0% 40%, from(#fff), to(#ccc) );
 	height:40px;
 	font-size:15px;
 	padding-left:1em;
-	width:20%;
+	width:45%;
 }
 
 #formulario input[type="text"]:hover, #formulario input[type="password"]:hover, #formulario input[type="text"]:active, #formulario input[type="password"]:active{
@@ -66,7 +98,7 @@ background-image:-webkit-gradient(linear, 0% 0%, 0% 40%, from(#fff), to(#ccc) );
 }
 
 #formulario input[type="submit"]{
-	width:10%;
+	width:25%;
 	font-size:16px;
 }
 
@@ -78,28 +110,22 @@ background-image:-webkit-gradient(linear, 0% 0%, 0% 40%, from(#fff), to(#ccc) );
 	/*border:1px solid orange;*/
 }
 
-#productos form{
-	border:none;
+#productos{
 	display:inline-block;
+	margin:0em;
+	width:60%;
 }
 
 #productos article{
 	cursor:pointer;
+	display:inline-block;
+	padding-bottom:5px;
 }
 
 #productos article:hover{
 	transform:scale(1.2); -moz-transform:scale(1.2); -webkit-transform:scale(1.2);
 }
 
-.separator{	
-	border-top:2px solid black;
-	border-bottom:2px solid green;
-	height:2px;
-	margin:0 auto;
-	margin-top:1em;
-	margin-bottom:1em;
-	width:70%;
-}
 
 #sesion{
 	height:24px;
@@ -138,6 +164,15 @@ background-image:-webkit-gradient(linear, 0% 0%, 0% 40%, from(#fff), to(#ccc) );
 }
 
 
+.separator{	
+	border-top:2px solid black;
+	border-bottom:2px solid #809686;
+	height:2px;
+	margin:0 auto;
+	margin-top:1em;
+	margin-bottom:1em;
+	width:70%;
+}
 
 
 
