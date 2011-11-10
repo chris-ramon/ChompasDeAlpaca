@@ -1,3 +1,4 @@
+
 $(document).ready(	
 	function(){
 		$('header h1').bind('click', irMainPage);
@@ -9,14 +10,26 @@ $(document).ready(
 	}
 );
 var first = true;
+console.log(first);
 function irMainPage(){
 	window.location.href = "http://localhost/ChompasDeAlpaca/";
 }
 
 function ingresarAdmin(){
-	if(first){
-		$('#client_button').fadeOut('slow', cambiarTamano);
-		first = false;		
+	var msg;
+	$.ajax({
+		url : 'http://localhost/ChompasDeAlpaca/admin/logged',
+		success : function(msg){
+			console.log(msg);
+		}
+	});
+	if(msg!="admin"){
+		if(first === true){
+			$('#client_button').fadeOut('slow', cambiarTamano);
+			first = false;		
+		}
+	} else {
+		window.location.href = "http://localhost/ChompasDeAlpaca/admin";
 	}
 }
 
@@ -39,7 +52,7 @@ function mostrarFormulario(){
 
 function transicion(){
 	$('#admin_button').fadeOut('slow');
-	$('#client_button').fadeOut('slow', mostrarCatalogo);	
+	$('#client_button').fadeOut('slow', mostrarCatalogo);
 }
 
 function mostrarCatalogo(){

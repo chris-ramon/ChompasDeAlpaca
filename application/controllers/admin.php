@@ -11,5 +11,8 @@ class Admin extends CI_Controller{
 		} else{						
 			redirect('/');
 		}
+	}	
+	function logged(){
+		echo $this->session->userdata('rol');
 	}
 }

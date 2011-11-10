@@ -1,6 +1,6 @@
 <?php $cart =  $this->cart->contents(); ?>
 <section id="cart">
-	<p>Your Cart</p>
+	<p>Your Cart</p>	
 	<div class="separator"></div>
 	<?php if(!(count($cart)>0)) { ?>
 	<img src="<?php echo base_url(); ?>application/site_media/img/cart_empty.png" id="cart_empty"/>
@@ -31,8 +31,9 @@
 	</table>
 	<button id="checkout" class="boton">Check Out</button>
 	<?php echo form_close(); ?>
-	<?php } ?>
-	
+	<div class="separator"></div>
+	<p id="deletecart"><a href="<?php echo base_url()?>shop/destroy"><img src="<?php echo base_url()?>application/site_media/img/deletecart.png" /></a> <span>Delete Cart</span></p>
+	<?php } ?>	
 </section>
 <section id="productos">	
 	<?php foreach($chompas as $chompa) { ?>	

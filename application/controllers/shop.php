@@ -60,32 +60,29 @@
 	}
 
 	function checkout(){
+		$this->load->model('chompas_model');	
 		$qtys = $this->input->post('qty');
 		$rowids = $this->input->post('rowid');
 		$checked = array_combine($rowids, $qtys);
-
 		$chompas = $this->cart->contents();
-
 		foreach($chompas as $chompa){
 			foreach($checked as $rowid => $qty){
 				if($chompa['rowid'] == $rowid){
-					$chompa['qty'] = $qty;
+					$data = array(
+						'rowid' => $rowid,
+						'qty' => $qty
+					);
+					$this->cart->update($data);					
 				}
 			}
-		}
-
-		$this->load->model('chompas_model');
-		
-		
+		}			
 		$chompas = $this->cart->contents();
-		
+
 		foreach($chompas as $chompa){
 			$this->chompas_model->updateQty($chompa['id'], $chompa['qty']);	
 		}
 		$this->checkOrders();
-		$this->destroy();		
-		// echo '<pre>';
-		// echo var_dump($this->cart->contents());
+		$this->destroy();
 	}
 
 	function checkOrders(){
@@ -93,8 +90,12 @@
 		$this->load->model('pedido_model');
 		$chompas = $this->chompas_model->getAll();
 		foreach($chompas as $chompa){
-			if($chompa->stock_actual < $chompa->stock_minimo){
-				$this->pedido_model->realizarPedido($chompa->id_insumo);		
+			if( $chompa->stock_actual < $chompa->stock_minimo && $chompa->cantidad_pendiente == 0 ){
+				$data = array(
+					'cantidad_pendiente' => $chompa->unidades_pedido
+				);
+				$this->chompas_model->actualizar($chompa->id, $data);
+				$this->pedido_model->realizarPedido($chompa->id, $chompa->id_insumo);		
 			}
 		}
 	}

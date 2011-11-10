@@ -21,11 +21,8 @@ class Chompas_model extends CI_Model{
 		$this->db->update('chompas',$data);
 	}
 
-	function actualizarStockActual($id){
+	function actualizar($id, $data){
 		$this->db->where('id', $id);
-		$data = array(
-			
-		);
 		$this->db->update('chompas', $data);
 	}
 }

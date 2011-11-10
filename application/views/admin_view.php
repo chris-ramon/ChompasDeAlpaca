@@ -28,15 +28,23 @@
 		<tr>
 			<th>Chompa</th>
 			<th>Stock Actual</th>
-			<th>Cantidad Pendiente</th>
+			<th>Cantidad Pendiente por Llegar</th>
 		</tr>
 
 		<?php foreach($chompas as $chompa) { ?>
-		<tr>
-			<td><?php echo $chompa->nombre ?></td>
-			<td><?php echo $chompa->stock_actual ?></td>
-			<td>0</td>
-		</tr>
+			<?php if($chompa->cantidad_pendiente > 0) { ?>
+			<tr class="resaltado">
+				<td><?php echo $chompa->nombre ?></td>
+				<td><?php echo $chompa->stock_actual ?></td>
+				<td><?php echo $chompa->cantidad_pendiente ?></td>
+			</tr>
+			<?php } else {?>			
+				<tr>
+					<td><?php echo $chompa->nombre ?></td>
+					<td><?php echo $chompa->stock_actual ?></td>
+					<td><?php echo $chompa->cantidad_pendiente ?></td>
+				</tr>
+			<?php } ?>
 		<?php } ?>
 	</table>
 </section>
