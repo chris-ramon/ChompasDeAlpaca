@@ -75,8 +75,21 @@ td, th{
 
 #tablecart{
 	/*display:none;*/
+	font-size:17px;
 	margin-bottom:30px;
 }
+
+#tablecart input[name="qty[]"]{
+	height:25px;	
+	text-align:center;	
+	width:50px;
+}
+
+#tablecart input[name="qty[]"]:hover, #tablecart input[name="qty[]"]:active{
+	border-color:#809686;	
+	cursor:pointer;
+}
+
 
 #formulario{
 	display:none;

@@ -58,4 +58,44 @@
 		$this->cart->destroy();
 		redirect('shop/catalog');
 	}
+
+	function checkout(){
+		$qtys = $this->input->post('qty');
+		$rowids = $this->input->post('rowid');
+		$checked = array_combine($rowids, $qtys);
+
+		$chompas = $this->cart->contents();
+
+		foreach($chompas as $chompa){
+			foreach($checked as $rowid => $qty){
+				if($chompa['rowid'] == $rowid){
+					$chompa['qty'] = $qty;
+				}
+			}
+		}
+
+		$this->load->model('chompas_model');
+		
+		
+		$chompas = $this->cart->contents();
+		
+		foreach($chompas as $chompa){
+			$this->chompas_model->updateQty($chompa['id'], $chompa['qty']);	
+		}
+		$this->checkOrders();
+		$this->destroy();		
+		// echo '<pre>';
+		// echo var_dump($this->cart->contents());
+	}
+
+	function checkOrders(){
+		$this->load->model('chompas_model');
+		$this->load->model('pedido_model');
+		$chompas = $this->chompas_model->getAll();
+		foreach($chompas as $chompa){
+			if($chompa->stock_actual < $chompa->stock_minimo){
+				$this->pedido_model->realizarPedido($chompa->id_insumo);		
+			}
+		}
+	}
  }

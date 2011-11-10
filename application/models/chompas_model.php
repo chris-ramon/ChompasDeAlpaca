@@ -12,4 +12,20 @@ class Chompas_model extends CI_Model{
 		$results = $query->result();
 		return $results[0];
 	}
+
+	function updateQty($id, $qty){	
+		$data = array(
+			'stock_actual' => $this->get($id)->stock_actual - $qty
+		);	
+		$this->db->where('id', $id);
+		$this->db->update('chompas',$data);
+	}
+
+	function actualizarStockActual($id){
+		$this->db->where('id', $id);
+		$data = array(
+			
+		);
+		$this->db->update('chompas', $data);
+	}
 }

@@ -11,21 +11,26 @@
 			<th>Price</th>
 			<th>Quantity</th>
 			<th>Subtotal</th>
-		</tr>	
-			<?php foreach($cart as $chompa) {?>
+		</tr>				
+			<?php echo form_open('shop/checkout'); ?>
+			<?php foreach($cart as $chompa) {?>			
 			<tr>
 				<td><?php echo $chompa['name'] ?></td>
 				<td>$<?php echo $chompa['price'] ?></td>
-				<td><?php echo $chompa['qty'] ?></td>
+				<td><input type="text" name="qty[]" value="<?php echo $chompa['qty'] ?>" class="degradado"
+				maxlength=2 /></td>
+				<input type="hidden" name="rowid[]" value="<?php echo $chompa['rowid'] ?>"/>
 				<td><?php echo $chompa['subtotal'] ?></td>
-			</tr>
-			<?php } ?>		
+			
+			</tr>			
+			<?php } ?>					
 		<tr>
 			<td colspan="3"><strong>Total</strong></td>
 			<td><?php echo $this->cart->total(); ?></td>
 		</tr>
 	</table>
 	<button id="checkout" class="boton">Check Out</button>
+	<?php echo form_close(); ?>
 	<?php } ?>
 	
 </section>
